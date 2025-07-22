@@ -1,0 +1,237 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 1rem;
+}
+
+/* Section/Page Styling */
+.page {
+  display: none;
+}
+.page:not(.hidden) {
+  display: block;
+}
+
+header {
+  margin-bottom: 1rem;
+}
+
+h1, h2 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+/* Event List */
+#eventList {
+  list-style: none;
+  padding: 0;
+}
+
+#eventList li {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: background 0.2s ease-in-out;
+}
+#eventList li:hover {
+  background-color: #e6f7ff;
+}
+
+/* Floating Action Button */
+.fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 1rem 1.25rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+.fab:hover {
+  background-color: #0056b3;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+}
+.modal-content label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.modal-content input[type="text"],
+.modal-content input[type="date"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.modal-content button {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+/* Detail Page Buttons */
+#addSegmentBtn,
+#syncBtn,
+#backBtn {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#addSegmentBtn {
+  background-color: #28a745;
+  color: white;
+}
+#syncBtn {
+  background-color: #17a2b8;
+  color: white;
+}
+#backBtn {
+  background-color: #6c757d;
+  color: white;
+}
+#addSegmentBtn:hover {
+  background-color: #218838;
+}
+#syncBtn:hover {
+  background-color: #138496;
+}
+#backBtn:hover {
+  background-color: #5a6268;
+}
+
+/* Content Segment Forms */
+#contentFormContainer {
+  margin-top: 1rem;
+}
+.segment {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.segment label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+.segment input[type="text"],
+.segment input[type="time"],
+.segment select,
+.segment textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.segment textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+.segment hr {
+  border: none;
+  border-top: 1px dashed #eee;
+  margin: 1.5rem 0;
+}
+.time-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+.time-row > div {
+  flex: 1;
+}
+
+/* Toast Notification Styles */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    opacity: 0;
+    animation: slideIn 0.5s forwards, fadeOut 0.5s 2.5s forwards;
+    min-width: 250px;
+    text-align: center;
+}
+
+.toast.success { background-color: #28a745; }
+.toast.error { background-color: #dc3545; }
+.toast.info { background-color: #17a2b8; }
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

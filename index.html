@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>pwa project456</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Capture</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- Removed manifest.json link -->
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+</head>
+<body>
+
+  <section id="mainPage" class="page">
+    <header>
+      <h1>Event Dates</h1>
+    </header>
+
+    <ul id="eventList">
+      </ul>
+
+    <button id="addEventBtn" class="fab">➕ New Event Date</button>
+
+    <div id="eventModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>New Event</h2>
+        <label for="eventNameInput">Event Name:</label> <input type="text" id="eventNameInput" placeholder="e.g. Sunday Service" />
+        <label for="eventDateInput">Event Date:</label> <input type="date" id="eventDateInput" />
+        <button id="saveEventBtn">Save</button>
+        <button id="cancelEventBtn">Cancel</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="detailPage" class="page hidden">
+    <header>
+      <h2 id="eventHeader">Event: [Name] on [Date]</h2>
+    </header>
+
+    <div id="contentFormContainer">
+      </div>
+
+    <button id="addSegmentBtn">➕ Add Another Content Segment</button>
+    <button id="syncBtn">☁️ Sync Online</button>
+    <button id="backBtn">⬅ Back to Events</button>
+  </section>
+
+  <!-- Custom Toast Notification Container (Added for better UX than alert) -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script type="module" src="./script.js"></script>
+  <!-- Removed service-worker registration script -->
+</body>
+</html>
+<!-- partial -->
+  <script type="module" src="./script.js"></script>
+
+</body>
+</html>
